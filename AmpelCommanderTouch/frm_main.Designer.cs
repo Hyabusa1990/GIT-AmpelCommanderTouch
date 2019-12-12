@@ -62,8 +62,8 @@
             this.btn_add1 = new System.Windows.Forms.Button();
             this.tp_settings = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_closeCommander = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_toAdds = new System.Windows.Forms.Button();
             this.cb_abcd = new System.Windows.Forms.CheckBox();
             this.cb_sepABCD = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
@@ -83,6 +83,9 @@
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.cb_string = new System.Windows.Forms.CheckBox();
             this.tb_string = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_minMax = new System.Windows.Forms.Button();
+            this.btn_closeCommander = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_start = new System.Windows.Forms.Button();
             this.btn_halt = new System.Windows.Forms.Button();
@@ -91,7 +94,6 @@
             this.tim_horn = new System.Windows.Forms.Timer(this.components);
             this.tim_update = new System.Windows.Forms.Timer(this.components);
             this.tim_count = new System.Windows.Forms.Timer(this.components);
-            this.btn_toAdds = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tc_switch.SuspendLayout();
             this.tp_ampel.SuspendLayout();
@@ -116,11 +118,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_preTimeEigen)).BeginInit();
             this.gb_pause.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tc_switch, 0, 0);
@@ -153,7 +157,7 @@
             // 
             // tp_ampel
             // 
-            this.tp_ampel.BackColor = System.Drawing.Color.White;
+            this.tp_ampel.BackColor = System.Drawing.Color.Transparent;
             this.tp_ampel.Controls.Add(this.tableLayoutPanel2);
             this.tp_ampel.Location = new System.Drawing.Point(4, 28);
             this.tp_ampel.Margin = new System.Windows.Forms.Padding(4);
@@ -182,6 +186,7 @@
             // 
             // flp_ampeln
             // 
+            this.flp_ampeln.BackColor = System.Drawing.Color.Transparent;
             this.flp_ampeln.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp_ampeln.Location = new System.Drawing.Point(0, 58);
             this.flp_ampeln.Margin = new System.Windows.Forms.Padding(0);
@@ -213,7 +218,7 @@
             // 
             // pb_red
             // 
-            this.pb_red.BackColor = System.Drawing.Color.Red;
+            this.pb_red.BackColor = System.Drawing.Color.Transparent;
             this.pb_red.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_red.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pb_red.Location = new System.Drawing.Point(0, 0);
@@ -225,7 +230,7 @@
             // 
             // pb_yellow
             // 
-            this.pb_yellow.BackColor = System.Drawing.Color.White;
+            this.pb_yellow.BackColor = System.Drawing.Color.Transparent;
             this.pb_yellow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_yellow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pb_yellow.Location = new System.Drawing.Point(96, 0);
@@ -237,7 +242,7 @@
             // 
             // pb_green
             // 
-            this.pb_green.BackColor = System.Drawing.Color.White;
+            this.pb_green.BackColor = System.Drawing.Color.Transparent;
             this.pb_green.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_green.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pb_green.Location = new System.Drawing.Point(192, 0);
@@ -310,7 +315,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel6.Controls.Add(this.btn_toAmpel, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.btn_toSettings, 3, 0);
             this.tableLayoutPanel6.Controls.Add(this.tb_ampelIP, 1, 0);
@@ -329,6 +334,7 @@
             this.btn_toAmpel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_toAmpel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_toAmpel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_toAmpel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_toAmpel.Location = new System.Drawing.Point(0, 0);
             this.btn_toAmpel.Margin = new System.Windows.Forms.Padding(0);
             this.btn_toAmpel.Name = "btn_toAmpel";
@@ -343,10 +349,11 @@
             this.btn_toSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_toSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_toSettings.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_toSettings.Location = new System.Drawing.Point(641, 0);
+            this.btn_toSettings.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_toSettings.Location = new System.Drawing.Point(640, 0);
             this.btn_toSettings.Margin = new System.Windows.Forms.Padding(0);
             this.btn_toSettings.Name = "btn_toSettings";
-            this.btn_toSettings.Size = new System.Drawing.Size(127, 58);
+            this.btn_toSettings.Size = new System.Drawing.Size(128, 58);
             this.btn_toSettings.TabIndex = 1;
             this.btn_toSettings.Text = ">>";
             this.btn_toSettings.UseVisualStyleBackColor = true;
@@ -360,7 +367,7 @@
             this.tb_ampelIP.Location = new System.Drawing.Point(120, 7);
             this.tb_ampelIP.Margin = new System.Windows.Forms.Padding(0);
             this.tb_ampelIP.Name = "tb_ampelIP";
-            this.tb_ampelIP.Size = new System.Drawing.Size(365, 44);
+            this.tb_ampelIP.Size = new System.Drawing.Size(364, 44);
             this.tb_ampelIP.TabIndex = 2;
             this.tb_ampelIP.Text = "192.168.100.128";
             this.tb_ampelIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -369,16 +376,17 @@
             // 
             // btn_addAmpel
             // 
+            this.btn_addAmpel.BackColor = System.Drawing.Color.Transparent;
             this.btn_addAmpel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_addAmpel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addAmpel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addAmpel.Location = new System.Drawing.Point(485, 0);
+            this.btn_addAmpel.Location = new System.Drawing.Point(484, 0);
             this.btn_addAmpel.Margin = new System.Windows.Forms.Padding(0);
             this.btn_addAmpel.Name = "btn_addAmpel";
             this.btn_addAmpel.Size = new System.Drawing.Size(156, 58);
             this.btn_addAmpel.TabIndex = 3;
             this.btn_addAmpel.Text = "Hinzufügen";
-            this.btn_addAmpel.UseVisualStyleBackColor = true;
+            this.btn_addAmpel.UseVisualStyleBackColor = false;
             this.btn_addAmpel.Click += new System.EventHandler(this.btn_addAmpel_Click);
             // 
             // tableLayoutPanel7
@@ -414,6 +422,7 @@
             // 
             // btn_addDot
             // 
+            this.btn_addDot.BackColor = System.Drawing.Color.Transparent;
             this.btn_addDot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_addDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addDot.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -423,11 +432,12 @@
             this.btn_addDot.Size = new System.Drawing.Size(133, 116);
             this.btn_addDot.TabIndex = 11;
             this.btn_addDot.Text = ".";
-            this.btn_addDot.UseVisualStyleBackColor = true;
+            this.btn_addDot.UseVisualStyleBackColor = false;
             this.btn_addDot.Click += new System.EventHandler(this.btn_addDot_Click);
             // 
             // btn_add0
             // 
+            this.btn_add0.BackColor = System.Drawing.Color.Transparent;
             this.btn_add0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add0.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -437,11 +447,12 @@
             this.btn_add0.Size = new System.Drawing.Size(127, 116);
             this.btn_add0.TabIndex = 10;
             this.btn_add0.Text = "0";
-            this.btn_add0.UseVisualStyleBackColor = true;
+            this.btn_add0.UseVisualStyleBackColor = false;
             this.btn_add0.Click += new System.EventHandler(this.btn_add0_Click);
             // 
             // btn_add9
             // 
+            this.btn_add9.BackColor = System.Drawing.Color.Transparent;
             this.btn_add9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add9.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -451,11 +462,12 @@
             this.btn_add9.Size = new System.Drawing.Size(127, 116);
             this.btn_add9.TabIndex = 9;
             this.btn_add9.Text = "9";
-            this.btn_add9.UseVisualStyleBackColor = true;
+            this.btn_add9.UseVisualStyleBackColor = false;
             this.btn_add9.Click += new System.EventHandler(this.btn_add9_Click);
             // 
             // btn_add8
             // 
+            this.btn_add8.BackColor = System.Drawing.Color.Transparent;
             this.btn_add8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add8.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -465,11 +477,12 @@
             this.btn_add8.Size = new System.Drawing.Size(127, 116);
             this.btn_add8.TabIndex = 8;
             this.btn_add8.Text = "8";
-            this.btn_add8.UseVisualStyleBackColor = true;
+            this.btn_add8.UseVisualStyleBackColor = false;
             this.btn_add8.Click += new System.EventHandler(this.btn_add8_Click);
             // 
             // btn_add7
             // 
+            this.btn_add7.BackColor = System.Drawing.Color.Transparent;
             this.btn_add7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add7.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -479,11 +492,12 @@
             this.btn_add7.Size = new System.Drawing.Size(127, 116);
             this.btn_add7.TabIndex = 7;
             this.btn_add7.Text = "7";
-            this.btn_add7.UseVisualStyleBackColor = true;
+            this.btn_add7.UseVisualStyleBackColor = false;
             this.btn_add7.Click += new System.EventHandler(this.btn_add7_Click);
             // 
             // btn_add6
             // 
+            this.btn_add6.BackColor = System.Drawing.Color.Transparent;
             this.btn_add6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add6.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -493,11 +507,12 @@
             this.btn_add6.Size = new System.Drawing.Size(127, 116);
             this.btn_add6.TabIndex = 6;
             this.btn_add6.Text = "6";
-            this.btn_add6.UseVisualStyleBackColor = true;
+            this.btn_add6.UseVisualStyleBackColor = false;
             this.btn_add6.Click += new System.EventHandler(this.btn_add6_Click);
             // 
             // btn_addDel
             // 
+            this.btn_addDel.BackColor = System.Drawing.Color.Transparent;
             this.btn_addDel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_addDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addDel.Font = new System.Drawing.Font("Arial Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -507,11 +522,12 @@
             this.btn_addDel.Size = new System.Drawing.Size(133, 116);
             this.btn_addDel.TabIndex = 5;
             this.btn_addDel.Text = "DEL";
-            this.btn_addDel.UseVisualStyleBackColor = true;
+            this.btn_addDel.UseVisualStyleBackColor = false;
             this.btn_addDel.Click += new System.EventHandler(this.btn_addDel_Click);
             // 
             // btn_add5
             // 
+            this.btn_add5.BackColor = System.Drawing.Color.Transparent;
             this.btn_add5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add5.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -521,11 +537,12 @@
             this.btn_add5.Size = new System.Drawing.Size(127, 116);
             this.btn_add5.TabIndex = 4;
             this.btn_add5.Text = "5";
-            this.btn_add5.UseVisualStyleBackColor = true;
+            this.btn_add5.UseVisualStyleBackColor = false;
             this.btn_add5.Click += new System.EventHandler(this.btn_add5_Click);
             // 
             // btn_add4
             // 
+            this.btn_add4.BackColor = System.Drawing.Color.Transparent;
             this.btn_add4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add4.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -535,11 +552,12 @@
             this.btn_add4.Size = new System.Drawing.Size(127, 116);
             this.btn_add4.TabIndex = 3;
             this.btn_add4.Text = "4";
-            this.btn_add4.UseVisualStyleBackColor = true;
+            this.btn_add4.UseVisualStyleBackColor = false;
             this.btn_add4.Click += new System.EventHandler(this.btn_add4_Click);
             // 
             // btn_add3
             // 
+            this.btn_add3.BackColor = System.Drawing.Color.Transparent;
             this.btn_add3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add3.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -549,11 +567,12 @@
             this.btn_add3.Size = new System.Drawing.Size(127, 116);
             this.btn_add3.TabIndex = 2;
             this.btn_add3.Text = "3";
-            this.btn_add3.UseVisualStyleBackColor = true;
+            this.btn_add3.UseVisualStyleBackColor = false;
             this.btn_add3.Click += new System.EventHandler(this.btn_add3_Click);
             // 
             // btn_add2
             // 
+            this.btn_add2.BackColor = System.Drawing.Color.Transparent;
             this.btn_add2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add2.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -563,11 +582,12 @@
             this.btn_add2.Size = new System.Drawing.Size(127, 116);
             this.btn_add2.TabIndex = 1;
             this.btn_add2.Text = "2";
-            this.btn_add2.UseVisualStyleBackColor = true;
+            this.btn_add2.UseVisualStyleBackColor = false;
             this.btn_add2.Click += new System.EventHandler(this.btn_add2_Click);
             // 
             // btn_add1
             // 
+            this.btn_add1.BackColor = System.Drawing.Color.Transparent;
             this.btn_add1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_add1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add1.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -577,7 +597,7 @@
             this.btn_add1.Size = new System.Drawing.Size(127, 116);
             this.btn_add1.TabIndex = 0;
             this.btn_add1.Text = "1";
-            this.btn_add1.UseVisualStyleBackColor = true;
+            this.btn_add1.UseVisualStyleBackColor = false;
             this.btn_add1.Click += new System.EventHandler(this.btn_add1_Click);
             // 
             // tp_settings
@@ -595,10 +615,10 @@
             // 
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Controls.Add(this.btn_closeCommander, 0, 3);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.gb_pause, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel14, 0, 3);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
@@ -610,21 +630,6 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(776, 298);
             this.tableLayoutPanel8.TabIndex = 1;
-            // 
-            // btn_closeCommander
-            // 
-            this.btn_closeCommander.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_closeCommander.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_closeCommander.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_closeCommander.ForeColor = System.Drawing.Color.Red;
-            this.btn_closeCommander.Location = new System.Drawing.Point(0, 237);
-            this.btn_closeCommander.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_closeCommander.Name = "btn_closeCommander";
-            this.btn_closeCommander.Size = new System.Drawing.Size(776, 61);
-            this.btn_closeCommander.TabIndex = 1;
-            this.btn_closeCommander.Text = "AmpelCommander Beenden";
-            this.btn_closeCommander.UseVisualStyleBackColor = true;
-            this.btn_closeCommander.Click += new System.EventHandler(this.btn_closeCommander_Click_1);
             // 
             // tableLayoutPanel9
             // 
@@ -645,9 +650,25 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(776, 59);
             this.tableLayoutPanel9.TabIndex = 2;
             // 
+            // btn_toAdds
+            // 
+            this.btn_toAdds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_toAdds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_toAdds.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_toAdds.Location = new System.Drawing.Point(0, 0);
+            this.btn_toAdds.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_toAdds.Name = "btn_toAdds";
+            this.btn_toAdds.Size = new System.Drawing.Size(120, 59);
+            this.btn_toAdds.TabIndex = 2;
+            this.btn_toAdds.Text = "<<";
+            this.btn_toAdds.UseVisualStyleBackColor = true;
+            this.btn_toAdds.Click += new System.EventHandler(this.btn_toAdds_Click);
+            // 
             // cb_abcd
             // 
             this.cb_abcd.AutoSize = true;
+            this.cb_abcd.Checked = true;
+            this.cb_abcd.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_abcd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cb_abcd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_abcd.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -661,6 +682,8 @@
             // cb_sepABCD
             // 
             this.cb_sepABCD.AutoSize = true;
+            this.cb_sepABCD.Checked = true;
+            this.cb_sepABCD.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_sepABCD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cb_sepABCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_sepABCD.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -735,6 +758,8 @@
             // cb_time120
             // 
             this.cb_time120.AutoSize = true;
+            this.cb_time120.Checked = true;
+            this.cb_time120.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_time120.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cb_time120.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_time120.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -836,6 +861,8 @@
             // cb_preTime10
             // 
             this.cb_preTime10.AutoSize = true;
+            this.cb_preTime10.Checked = true;
+            this.cb_preTime10.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_preTime10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cb_preTime10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_preTime10.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -921,6 +948,8 @@
             // cb_string
             // 
             this.cb_string.AutoSize = true;
+            this.cb_string.Checked = true;
+            this.cb_string.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_string.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cb_string.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_string.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -938,6 +967,55 @@
             this.tb_string.Name = "tb_string";
             this.tb_string.Size = new System.Drawing.Size(476, 22);
             this.tb_string.TabIndex = 3;
+            this.tb_string.Text = "ampel.gras-it.de";
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 2;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.Controls.Add(this.btn_minMax, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.btn_closeCommander, 0, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 237);
+            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 1;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(776, 61);
+            this.tableLayoutPanel14.TabIndex = 5;
+            // 
+            // btn_minMax
+            // 
+            this.btn_minMax.BackColor = System.Drawing.Color.Transparent;
+            this.btn_minMax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_minMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minMax.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_minMax.ForeColor = System.Drawing.Color.Lime;
+            this.btn_minMax.Location = new System.Drawing.Point(388, 0);
+            this.btn_minMax.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_minMax.Name = "btn_minMax";
+            this.btn_minMax.Size = new System.Drawing.Size(388, 61);
+            this.btn_minMax.TabIndex = 3;
+            this.btn_minMax.Text = "Vollbild";
+            this.btn_minMax.UseVisualStyleBackColor = false;
+            this.btn_minMax.Click += new System.EventHandler(this.btn_minMax_Click);
+            // 
+            // btn_closeCommander
+            // 
+            this.btn_closeCommander.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_closeCommander.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_closeCommander.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_closeCommander.ForeColor = System.Drawing.Color.Red;
+            this.btn_closeCommander.Location = new System.Drawing.Point(0, 0);
+            this.btn_closeCommander.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_closeCommander.Name = "btn_closeCommander";
+            this.btn_closeCommander.Size = new System.Drawing.Size(388, 61);
+            this.btn_closeCommander.TabIndex = 2;
+            this.btn_closeCommander.Text = "Beenden";
+            this.btn_closeCommander.UseVisualStyleBackColor = true;
+            this.btn_closeCommander.Click += new System.EventHandler(this.btn_closeCommander_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -965,6 +1043,7 @@
             this.btn_start.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_start.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_start.ForeColor = System.Drawing.Color.Black;
             this.btn_start.Location = new System.Drawing.Point(0, 0);
             this.btn_start.Margin = new System.Windows.Forms.Padding(0);
             this.btn_start.Name = "btn_start";
@@ -980,6 +1059,7 @@
             this.btn_halt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_halt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_halt.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_halt.ForeColor = System.Drawing.Color.Black;
             this.btn_halt.Location = new System.Drawing.Point(264, 0);
             this.btn_halt.Margin = new System.Windows.Forms.Padding(0);
             this.btn_halt.Name = "btn_halt";
@@ -991,16 +1071,18 @@
             // 
             // btn_abcd
             // 
+            this.btn_abcd.BackColor = System.Drawing.Color.White;
             this.btn_abcd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_abcd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_abcd.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_abcd.ForeColor = System.Drawing.Color.Black;
             this.btn_abcd.Location = new System.Drawing.Point(391, 0);
             this.btn_abcd.Margin = new System.Windows.Forms.Padding(0);
             this.btn_abcd.Name = "btn_abcd";
             this.btn_abcd.Size = new System.Drawing.Size(127, 111);
             this.btn_abcd.TabIndex = 2;
             this.btn_abcd.Text = "AB / CD";
-            this.btn_abcd.UseVisualStyleBackColor = true;
+            this.btn_abcd.UseVisualStyleBackColor = false;
             this.btn_abcd.Click += new System.EventHandler(this.btn_abcd_Click);
             // 
             // btn_stop
@@ -1009,6 +1091,7 @@
             this.btn_stop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_stop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_stop.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_stop.ForeColor = System.Drawing.Color.Black;
             this.btn_stop.Location = new System.Drawing.Point(518, 0);
             this.btn_stop.Margin = new System.Windows.Forms.Padding(0);
             this.btn_stop.Name = "btn_stop";
@@ -1035,20 +1118,6 @@
             this.tim_count.Interval = 1000;
             this.tim_count.Tick += new System.EventHandler(this.tim_count_Tick);
             // 
-            // btn_toAdds
-            // 
-            this.btn_toAdds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_toAdds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_toAdds.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_toAdds.Location = new System.Drawing.Point(0, 0);
-            this.btn_toAdds.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_toAdds.Name = "btn_toAdds";
-            this.btn_toAdds.Size = new System.Drawing.Size(120, 59);
-            this.btn_toAdds.TabIndex = 2;
-            this.btn_toAdds.Text = "<<";
-            this.btn_toAdds.UseVisualStyleBackColor = true;
-            this.btn_toAdds.Click += new System.EventHandler(this.btn_toAdds_Click);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1057,7 +1126,8 @@
             this.ClientSize = new System.Drawing.Size(784, 441);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_main";
             this.Text = "AmpelCommander Touch";
@@ -1092,6 +1162,7 @@
             this.gb_pause.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
+            this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1140,7 +1211,6 @@
         private System.Windows.Forms.Button btn_add2;
         private System.Windows.Forms.Button btn_add1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Button btn_closeCommander;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.CheckBox cb_abcd;
         private System.Windows.Forms.CheckBox cb_sepABCD;
@@ -1162,6 +1232,9 @@
         private System.Windows.Forms.CheckBox cb_string;
         private System.Windows.Forms.TextBox tb_string;
         private System.Windows.Forms.Button btn_toAdds;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Button btn_minMax;
+        private System.Windows.Forms.Button btn_closeCommander;
     }
 }
 

@@ -13,6 +13,7 @@ namespace AmpelCommanderTouch
 {
     public partial class frm_main : Form
     {
+        
         bool horn = false;
         int hornCount = 0;
 
@@ -32,6 +33,10 @@ namespace AmpelCommanderTouch
         public frm_main()
         {
             InitializeComponent();
+            this.BackColor = Color.FromArgb(70, 70, 70);
+            tp_ampel.BackColor = Color.FromArgb(70, 70, 70);
+            tp_add.BackColor = Color.FromArgb(70, 70, 70);
+            tp_settings.BackColor = Color.FromArgb(70, 70, 70);
         }
 
         private void btn_toAdd_Click(object sender, EventArgs e)
@@ -590,11 +595,20 @@ namespace AmpelCommanderTouch
             }
         }
 
-        private void btn_closeCommander_Click_1(object sender, EventArgs e)
+        private void btn_minMax_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(this.FormBorderStyle == FormBorderStyle.None)
+            {
+                this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+                this.WindowState = FormWindowState.Normal;
+                btn_minMax.Text = "Vollbild";
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+                btn_minMax.Text = "Fenster Modus";
+            }
         }
-
-        
     }
 }
