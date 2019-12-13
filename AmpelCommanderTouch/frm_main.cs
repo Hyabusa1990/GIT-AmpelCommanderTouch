@@ -20,7 +20,14 @@ namespace AmpelCommanderTouch
         bool red = true;
         bool yellow = false;
         bool green = false;
-        string Str = "";
+        string data = "";
+
+        string abcd = "";
+        string timeStr = "";
+
+        bool b_abcd = false;
+        bool b_time = false;
+
 
         int time = 0;
 
@@ -93,7 +100,8 @@ namespace AmpelCommanderTouch
                 CAmpelButton cAmpelButton = (CAmpelButton)control;
                 cAmpelButton.Click -= new EventHandler(this.ampel_Click);
                 cAmpelButton.Click += new EventHandler(this.ampel_Click);
-                cAmpelButton.UpdateAmpel(this.red, this.yellow, this.green, this.horn, this.Str);
+                cAmpelButton.UpdateAmpel(this.red, this.yellow, this.green, this.horn, this.data, this.timeStr, this.abcd, this.b_time, this.b_abcd, 1);
+
             }
             if (this.red)
             {
@@ -119,40 +127,54 @@ namespace AmpelCommanderTouch
             {
                 this.pb_yellow.BackColor = Color.Transparent;
             }
-            this.lbl_string.Text = this.Str;
+
+            if (this.cb_string.Checked)
+            {
+                this.lbl_string.Text = this.data;
+            }
+            else
+            {
+                this.lbl_string.Text = this.abcd + " " + this.timeStr;
+            }
+            
         }
 
         private void tim_count_Tick(object sender, EventArgs e)
         {
             if (this.cb_string.Checked)
             {
-                this.Str = this.tb_string.Text;
+                string buffer = this.tb_string.Text;
+                buffer = buffer.Replace("{clock}", DateTime.Now.ToShortTimeString());
+                this.data = buffer;
+                b_abcd = false;
+                b_time = false;
             }
             else if (this.cb_abcd.Checked)
             {
+                b_abcd = true;
                 if (this.ab)
                 {
                     if (this.cb_sepABCD.Checked)
                     {
-                        this.Str = "A/B  ";
+                        this.abcd = "A/B  ";
                     }
                     else
                     {
-                        this.Str = "AB ";
+                        this.abcd = "AB ";
                     }
                 }
                 else if (this.cb_sepABCD.Checked)
                 {
-                    this.Str = "C/D  ";
+                    this.abcd = "C/D  ";
                 }
                 else
                 {
-                    this.Str = "CD ";
+                    this.abcd = "CD ";
                 }
             }
             else
             {
-                this.Str = "";
+                this.data = "";
             }
             if (this.running && !this.halt)
             {
@@ -254,7 +276,8 @@ namespace AmpelCommanderTouch
             }
             if (!this.cb_string.Checked)
             {
-                this.Str += this.time;
+                this.b_time = true;
+                this.timeStr = this.time.ToString();
             }
         }
 

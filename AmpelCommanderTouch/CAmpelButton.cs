@@ -24,10 +24,18 @@ namespace AmpelCommanderTouch
             private bool green;
 
             private bool horn;
+            
+            private bool b_abcd;
 
-            private string str;
+            private bool b_time;
+
+            private string data;
 
             private int ampelID = 1;
+
+            private string time;
+
+            private string abcd;
 
             public bool Red
             {
@@ -77,15 +85,61 @@ namespace AmpelCommanderTouch
                 }
             }
 
-            public string Str
+            public bool B_ABCD
             {
                 get
                 {
-                    return this.str;
+                    return this.b_abcd;
                 }
                 set
                 {
-                    this.str = value;
+                    this.b_abcd = value;
+                }
+            }
+
+            public bool B_TIME
+            {
+                get
+                {
+                    return this.b_time;
+                }
+                set
+                {
+                    this.b_time = value;
+                }
+            }
+
+            public string Data
+            {
+                get
+                {
+                    return this.data;
+                }
+                set
+                {
+                    this.data = value;
+                }
+            }
+            public string Time
+            {
+                get
+                {
+                    return this.time;
+                }
+                set
+                {
+                    this.time = value;
+                }
+            }
+            public string ABCD
+            {
+                get
+                {
+                    return this.abcd;
+                }
+                set
+                {
+                    this.abcd = value;
                 }
             }
 
@@ -256,7 +310,7 @@ namespace AmpelCommanderTouch
             this.upsBuffer = 0;
         }
 
-        public void UpdateAmpel(bool pRed, bool pYellow, bool pGreen, bool pHorn, string pStr)
+        public void UpdateAmpel(bool pRed, bool pYellow, bool pGreen, bool pHorn, string pDat, string pTime, string pABCD, bool pbtime, bool pbABCD, int pAmpelID)
         {
             if (!this.bg_Worker.IsBusy)
             {
@@ -265,7 +319,12 @@ namespace AmpelCommanderTouch
                 parameter.Yellow = pYellow;
                 parameter.Green = pGreen;
                 parameter.Horn = pHorn;
-                parameter.Str = pStr;
+                parameter.Data = pDat;
+                parameter.Time = pTime;
+                parameter.ABCD = pABCD;
+                parameter.B_TIME = pbtime;
+                parameter.B_ABCD = pbABCD;
+                parameter.AmpelID = pAmpelID;
                 this.bg_Worker.RunWorkerAsync(parameter);
                 this.upsBuffer++;
                 this.Refresh();
@@ -285,8 +344,12 @@ namespace AmpelCommanderTouch
                         {"r" + parameter.AmpelID, parameter.Red.ToString()},
                         {"g" + parameter.AmpelID, parameter.Green.ToString()},
                         {"y" + parameter.AmpelID, parameter.Yellow.ToString()},
-                        {"s1", parameter.Str.ToString()},
-                        {"h1", parameter.Horn.ToString()},
+                        {"da", parameter.Data.ToString()},
+                        {"ho", parameter.Horn.ToString()},
+                        {"t" + parameter.AmpelID, parameter.Time.ToString()},
+                        {"ab", parameter.ABCD.ToString()},
+                        {"bt", parameter.B_TIME.ToString()},
+                        {"ba", parameter.B_ABCD.ToString()}
                     }));
                 }
 
@@ -301,8 +364,12 @@ namespace AmpelCommanderTouch
                         {"q", "r" + parameter.AmpelID +
                         "g" + parameter.AmpelID +
                         "y" + parameter.AmpelID +
-                        "s1" +
-                        "h1"},
+                        "da" + 
+                        "ho" +
+                        "t" + parameter.AmpelID +
+                        "ab" +
+                        "bt" +
+                        "ba"},
                     }));
                     }
 
@@ -310,8 +377,23 @@ namespace AmpelCommanderTouch
                     this.red = Convert.ToBoolean(resp["r" + parameter.AmpelID]);
                     this.green = Convert.ToBoolean(resp["g" + parameter.AmpelID]);
                     this.yellow = Convert.ToBoolean(resp["y" + parameter.AmpelID]);
-                    this.str = resp["s1"];
-                    this.horn = Convert.ToBoolean(resp["h1"]);
+                    this.str = "";
+                    if (Convert.ToBoolean(resp["bt"]))
+                    {
+                        this.str += resp["t" + parameter.AmpelID];
+
+                    }
+                    if (Convert.ToBoolean(resp["ba"]))
+                    {
+                        this.str += resp["ab"];
+                    }
+
+                    if (str.Equals(""))
+                    {
+                        this.str = resp["da"];
+                    }
+                    
+                    this.horn = Convert.ToBoolean(resp["ho"]);
                 }
             }
             catch
