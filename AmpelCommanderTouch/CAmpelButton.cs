@@ -359,17 +359,22 @@ namespace AmpelCommanderTouch
                 {
                     using (WebClient webClient = new WebClient())
                     {
+                        Dictionary<string, List<string>> getReg = new Dictionary<string, List<string>>();
+                        List<string> args = new List<string>();
+                        args.Add("r" + parameter.AmpelID);
+                        args.Add("g" + parameter.AmpelID);
+                        args.Add("y" + parameter.AmpelID);
+                        args.Add("da");
+                        args.Add("ho");
+                        args.Add("ab");
+                        args.Add("bt");
+                        args.Add("ba");
+                        args.Add("t" + parameter.AmpelID);
+                        getReg.Add("q", args);
+
                         response = Encoding.UTF8.GetString(webClient.UploadValues("http://" + this.address.ToString() + "/ampel.php", new NameValueCollection() {
                         {"act", "get"},
-                        {"q", "r" + parameter.AmpelID +
-                        "g" + parameter.AmpelID +
-                        "y" + parameter.AmpelID +
-                        "da" + 
-                        "ho" +
-                        "t" + parameter.AmpelID +
-                        "ab" +
-                        "bt" +
-                        "ba"},
+                        {"q", JsonConvert.SerializeObject(getReg)},
                     }));
                     }
 
